@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<body>
+
+    <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Enter your post below</h1>
+<div class="container">
+    <form action="/check" method="POST" class="d-flex justify-content-center py-3">
+        <input type="text" name="name" placeholder="Write your name" required class="mx-5">
+        <input type="text" name="pt" placeholder="Write your story" required class="mx-5">
+        
+       <input type="submit" value="SUBMIT" class="mx-5"/>
+      </form>
+
+    </div>
+</body>
+
+<%- include("partials/footer.ejs") %>

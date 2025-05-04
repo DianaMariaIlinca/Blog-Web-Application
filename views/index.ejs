@@ -1,0 +1,71 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <h1>The funniest stories will be posted here weekly!</h1>
+  <div class="row mb-2">
+    <div class="col-md-6 px-5">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Ana</strong>
+          <h3 class="mb-0">Birthday</h3>
+          <div class="mb-1 text-body-secondary">Nov 12</div>
+          <p class="card-text mb-auto">
+            I was furious at my boyfriend the other day thinking he forgot my birthday. After hours of wainting, I confronted him! Turns out I don't know how to read a calendar. I was the one who mixed up the dates!!
+            </p>
+          
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="images/beer.jpg" style="width: 200px; height: 250px;" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 px-5">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis">Marius</strong>
+          <h3 class="mb-0">Crazy Party</h3>
+          <div class="mb-1 text-body-secondary">Nov 11</div>
+          <p class="mb-auto">I was drunk last night and I woke up without my underwear... I don't know how, but it ended up on my friends head!</p>
+         
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="images/calendar.jpg" style="width: 200px; height: 250px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="feed">
+    <% if (locals.blogList && blogList.length < 1) { %>
+      <h1 class="no-blog-title">
+        You don't have any blogs yet. Please visit <br />the home page to create a new blog.
+      </h1>
+    <% } else { %>
+      <h1 class="title">Your Blogs list</h1>
+    <% } %>
+
+    <div class="overflow-div">
+      <div class="home-container">
+        <% for (let index = 0; index < blogList.length; index++) { %>
+          <div class="blog-card">
+            <span class="blog-number"><%= index + 1 %></span>
+            <h4><%= blogList[index].title %></h4>
+            <p>
+              <%= blogList[index].description.slice(0, 300) %>
+              <% if (blogList[index].description.length > 299) { %> ...
+                <a class="view-btn" href="/blogDetails/<%= blogList[index].id %>">View Blog</a>
+              <% } %>
+            </p>
+            <div class="btn-wrapper">
+              <form action="/delete/<%= blogList[index].id %>" method="post">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+              <a class="edit-btn" href="/edit/<%= blogList[index].id %>">Edit</a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <%- include("partials/footer.ejs") %>
+</body>
