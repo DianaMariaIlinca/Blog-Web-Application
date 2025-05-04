@@ -1,0 +1,225 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #FEF2F2;
+  }
+
+  .gradient-background {
+    background: linear-gradient(300deg, #FEF2F2, #FEF2F2, #F5F5F5);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar{
+    background-color:#7D5E3F;
+  }
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #443627;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #7D5E3F;
+    color: white;
+    padding:10px 15px;
+    border: none ;
+    border-radius: 25%;
+  }
+  
+  .openbtn:hover {
+    background-color: #F5D97E;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+
+  .overflow-div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+ 
+  /* Container for the blog cards - Stacking posts vertically */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+
+  .blog-card {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+ 
+  .blog-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+ 
+  .blog-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F5D97E;
+    margin-bottom: 10px;
+  }
+  
+ 
+  .blog-card h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+
+  .blog-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  
+  .delete-btn {
+    background-color: #a70909;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32121;
+  }
+  
+  
+  .edit-btn {
+    background-color: #F5D97E;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #F5D97E;
+  }
+  
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #424242;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+ 
+  .no-blog-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #424242;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+ input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #F03861;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+
+  
